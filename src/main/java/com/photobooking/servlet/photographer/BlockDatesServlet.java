@@ -20,7 +20,7 @@ import com.photobooking.model.user.User;
 import com.photobooking.model.photographer.UnavailableDate;
 import com.photobooking.model.photographer.UnavailableDateManager;
 
-/*
+/**
  * Servlet for handling blocking dates in photographer's calendar
  */
 @WebServlet("/photographer/block-dates")

@@ -20,7 +20,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonParser;
 
-/*
+/**
  * Servlet for saving photographer's availability (blocked time slots)
  */
 @WebServlet("/photographer/save-availability")
