@@ -1,4 +1,4 @@
-package com.photobookin// CreateGalleryServlet.java
+
 package com.photobooking.servlet.gallery;
 
 import java.io.IOException;

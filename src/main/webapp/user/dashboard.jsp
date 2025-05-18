@@ -26,7 +26,7 @@
     }
 
     // Initialize managers
-    BookingManager bookingManager = new BookingManager( );
+    BookingManager bookingManager = new BookingManager();
     UserManager userManager = new UserManager(getServletContext());
     PhotographerManager photographerManager = new PhotographerManager();
 
@@ -408,8 +408,3 @@
 </script>
 </body>
 </html>
-<%!
-    private ServletContext getServletContext() {
-        return null;
-    }
-%>
