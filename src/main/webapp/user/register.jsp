@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register - SnapEvent</title>
+    <title>Register - SnapHouse</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -61,7 +61,7 @@
             <div class="card register-card">
                 <div class="register-header">
                     <h3>Create Your Account</h3>
-                    <p class="mb-0">Join SnapEvent and get started</p>
+                    <p class="mb-0">Join SnapHouse and get started</p>
                 </div>
                 <div class="card-body p-4">
                     <jsp:include page="/includes/messages.jsp" />
