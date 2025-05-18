@@ -8,7 +8,7 @@ import java.util.logging.Logger;
 import java.util.logging.Level;
 import java.util.stream.Collectors;
 
-/**
+/*
  * Manages photographer unavailable dates
  */
 public class UnavailableDateManager {
