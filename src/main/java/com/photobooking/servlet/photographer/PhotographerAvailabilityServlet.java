@@ -23,7 +23,7 @@ import com.photobooking.model.user.User;
 import com.photobooking.model.photographer.UnavailableDate;
 import com.photobooking.model.photographer.UnavailableDateManager;
 
-/**
+/*
  * Servlet for handling photographer availability calendar
  */
 @WebServlet("/photographer/availability")

@@ -20,7 +20,7 @@ import com.photobooking.model.user.User;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
-/**
+/*
  * AJAX endpoint for getting photographer availability for a specific date
  */
 @WebServlet("/photographer/get-availability")

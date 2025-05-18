@@ -14,7 +14,7 @@ import com.photobooking.model.photographer.UnavailableDateManager;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
-/**
+/*
  * Servlet for removing blocked/unavailable dates from the photographer's calendar
  */
 @WebServlet("/photographer/remove-blocked-date")
