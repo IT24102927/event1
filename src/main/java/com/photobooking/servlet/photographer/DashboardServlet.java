@@ -17,7 +17,7 @@ import com.photobooking.model.photographer.PhotographerManager;
 import com.photobooking.model.photographer.PhotographerService;
 import com.photobooking.model.photographer.PhotographerServiceManager;
 import com.photobooking.model.review.Review;
-//import com.photobooking.model.review.ReviewManager;
+import com.photobooking.model.review.ReviewManager;
 import com.photobooking.model.user.User;
 import com.photobooking.util.FileHandler;
 import com.google.gson.JsonArray;
@@ -142,9 +142,9 @@ public class DashboardServlet extends HttpServlet {
             }
 
             // Get recent reviews
-//            ReviewManager reviewManager = new ReviewManager();
-//            List<Review> recentReviews = reviewManager.getPhotographerReviews(photographer.getPhotographerId());
-//            LOGGER.info("Found " + recentReviews.size() + " reviews");
+           ReviewManager reviewManager = new ReviewManager();
+           List<Review> recentReviews = reviewManager.getPhotographerReviews(photographer.getPhotographerId());
+           LOGGER.info("Found " + recentReviews.size() + " reviews");
 
             // Prepare calendar events
             JsonArray calendarEvents = prepareCalendarEvents(upcomingBookings, bookingManager);
@@ -155,7 +155,7 @@ public class DashboardServlet extends HttpServlet {
             request.setAttribute("upcomingBookings", upcomingBookings);
             request.setAttribute("totalBookings", totalBookings);
             request.setAttribute("completedBookings", completedBookings);
-            //request.setAttribute("recentReviews", recentReviews);
+            request.setAttribute("recentReviews", recentReviews);
             request.setAttribute("calendarEvents", calendarEvents.toString());
 
             request.getRequestDispatcher("/photographer/dashboard.jsp").forward(request, response);
