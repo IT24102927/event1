@@ -87,9 +87,10 @@ public class BookingQueue {
     /**
      * Process and remove a specific booking from the queue by ID.
      * @param bookingId The ID of the booking to process
+     * @param persist Whether to persist the booking (save to file/db)
      * @return The processed booking, or null if not found
      */
-    public Booking processBookingById(String bookingId) {
+    public Booking processBookingById(String bookingId, boolean persist) {
         if (bookingId == null || isEmpty()) {
             return null;
         }
@@ -120,9 +121,20 @@ public class BookingQueue {
 
         size--;
 
-        // Save the booking to the database/file
-        bookingManager.createBooking(current.booking);
+        // Save the booking to the database/file only if persist is true
+        if (persist) {
+            bookingManager.createBooking(current.booking);
+        }
         return current.booking;
+    }
+
+    /**
+     * Process and remove a specific booking from the queue by ID.
+     * @param bookingId The ID of the booking to process
+     * @return The processed booking, or null if not found
+     */
+    public Booking processBookingById(String bookingId) {
+        return processBookingById(bookingId, true);
     }
 
     /**

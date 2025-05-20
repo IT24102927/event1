@@ -119,12 +119,11 @@ public class BookingQueueManager {
         Booking booking = mainQueue.dequeue();
 
         if (booking != null) {
-            // Also remove from photographer queue
+            // Also remove from photographer queue WITHOUT persisting again
             String photographerId = booking.getPhotographerId();
             if (photographerId != null && photographerQueues.containsKey(photographerId)) {
-                // Find and remove the booking from the photographer's queue
                 BookingQueue photographerQueue = photographerQueues.get(photographerId);
-                photographerQueue.processBookingById(booking.getBookingId());
+                photographerQueue.processBookingById(booking.getBookingId(), false);
             }
 
             LOGGER.info("Booking " + booking.getBookingId() + " processed from queue");
@@ -147,8 +146,8 @@ public class BookingQueueManager {
         Booking booking = photographerQueue.dequeue();
 
         if (booking != null) {
-            // Also remove from main queue
-            mainQueue.processBookingById(booking.getBookingId());
+            // Also remove from main queue WITHOUT persisting again
+            mainQueue.processBookingById(booking.getBookingId(), false);
 
             LOGGER.info("Booking " + booking.getBookingId() + " processed for photographer " + photographerId);
         }
