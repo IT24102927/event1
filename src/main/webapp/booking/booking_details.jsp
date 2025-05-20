@@ -209,6 +209,16 @@
                 </button>
               </form>
             </c:if>
+
+            <c:if test="${booking.status != 'CANCELLED' && booking.status != 'COMPLETED'
+                          && (sessionScope.user.userId == booking.clientId
+                              || sessionScope.user.userId == booking.photographerId
+                              || sessionScope.user.userType == 'ADMIN')}">
+              <a href="${pageContext.request.contextPath}/booking/modify?id=${booking.bookingId}"
+                 class="btn btn-outline-secondary">
+                <i class="bi bi-pencil-square me-1"></i>Modify Booking
+              </a>
+            </c:if>
           </div>
         </div>
       </div>
